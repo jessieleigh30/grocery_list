@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import List from './list';
+import TobuyForm from './TobuyForm';
 
 class App extends Component {
+  state = {
+    tobuy: [
+      {id: 1, name:"milk", complete: "false"},
+      {id: 2, name:"cheese", complete: "false"},
+      {id: 1, name:"bananas", complete: "false"},
+    ]
+  };
+
+ 
+    
+  
   render() {
+    const { tobuy } = this.state;
+ 
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <TobuyForm />
+        <List name="To Buy List" items={tobuy} />
       </div>
     );
   }
