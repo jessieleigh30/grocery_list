@@ -1,17 +1,17 @@
 import React from 'react';
 
 class TobuyForm extends React.Component {
-  state = {name: ''}
+  state = {name:""};
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ name: e.target.value});
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addItem(this.state.name);
-    this.setState({ name: ''})
-  }
+    this.setState({ name: ''});
+  };
 
   render() {
     const { name } = this.state;
@@ -21,7 +21,7 @@ class TobuyForm extends React.Component {
         <input 
         value={name}
         name="name"
-        onChange={this.handleSubmit}
+        onChange={this.handleChange}
         required placeholder="Add An Item" 
         />
       </form>
